@@ -26,8 +26,9 @@ gulp.task("copyImg",function(done){
  // 修改文件后页面自动刷新
 gulp.task("copyHtml",function(done){
     gulp.src("pages/*.html").pipe(gulp.dest("dist/pages")).pipe(connect.reload());
-    gulp.src(["js/*.js","lib/*.js"]).pipe(gulp.dest("dist/js")).pipe(connect.reload());
+    gulp.src("js/*.js").pipe(gulp.dest("dist/js")).pipe(connect.reload());
     gulp.src("css/*.css").pipe(gulp.dest("dist/css")).pipe(connect.reload());
+    gulp.src("lib/*.js").pipe(gulp.dest("dist/lib")).pipe(connect.reload());
     done();
 });
 //  侦测文件变化  关键字 watch("监听的文件",执行对应的任务)
@@ -35,7 +36,8 @@ gulp.task("watch",function(done){
     // 可以写 *.html 监听所有的html文件的变化
     gulp.watch("pages/*.html",gulp.series("copyHtml"));
     gulp.watch(["css/*.css"],gulp.series("copyHtml"));
-    gulp.watch(["js/*.js","lib/*.js"],gulp.series("copyHtml"));
+    gulp.watch("js/*.js",gulp.series("copyHtml"));
+    gulp.watch("lib/*.js",gulp.series("copyHtml"));
     gulp.watch("images/**",gulp.series("copyImg"));
     // gulp.watch("sass/*.scss",gulp.series("sass"));
     done();
@@ -58,16 +60,16 @@ gulp.task("server",function(done){
 
 
 // 合并压缩并且保留两个文件
-gulp.task("uglify",function(done){
-    gulp.src(["json/a.js","json/b.js"])
-    // concat(要合并成什么文件名)
-    .pipe(concat("main.js"))
-    .pipe(gulp.dest("dist/js"))
-    .pipe(uglify())
-    .pipe(rename("main.min.js"))
-    .pipe(gulp.dest("dist/js"));
-    done();
-});
+// gulp.task("uglify",function(done){
+//     gulp.src(["json/a.js","json/b.js"])
+//     // concat(要合并成什么文件名)
+//     .pipe(concat("main.js"))
+//     .pipe(gulp.dest("dist/js"))
+//     .pipe(uglify())
+//     .pipe(rename("main.min.js"))
+//     .pipe(gulp.dest("dist/js"));
+//     done();
+// });
 // ES6 转 ES5
 gulp.task("babel",function(done){
     gulp.src("json/a.js")

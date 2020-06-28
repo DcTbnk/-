@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1897424_v9z7oyh6vp.css">
+    <link rel="stylesheet" href="../css/res.css">
+</head>
+
+<body>
+    <!-- html -->
+    <!-- header 头************************************** -->
+    <div id="header"></div>
+
+    <!-- content 内容***********************************-->
+
+    <div class="contents container-fluid">
+        <div class="content container1">
+            <p>用户注册</p>
+            <!-- 左 -->
+            <div class="content-text">
+                <div class="content-left">
+                    <ul>
+                        <li>
+                            <span>手机号码</span>
+                            <div>
+                                <input type="number" name="username"><br>
+                                <i>!</i><span>仅支持中国大陆地区手机号码</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span>验证码</span>
+                            <div>
+                                <input type="text" name="code1"><br>
+                                <span class="code2">点击获取验证码</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span>设置密码</span>
+                            <input type="password" name="password1" placeholder="最少六位">
+                        </li>
+                        <li>
+                            <span>确认密码</span>
+                            <input type="password" name="password2">
+                        </li>
+                        <li>
+                            <span></span>
+                            <div>
+                                <button name="submit-btn">同意协议并注册</button>
+                                <p>
+                                    <span>已有账号？请直接登录注册</span>
+                                    <span><a>《馥境商城用户协议》</a></span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 右 -->
+                <div class="content-right  container2">
+                    <span>使用社交账号登录</span>
+                    <ol>
+                        <li><i class="iconfont iconweibo"></i><span>微博</span></li>
+                        <li><i class="iconfont iconkoukou"></i><span>QQ</span></li>
+                        <li><i class="iconfont iconweixin"></i><span>微信</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer 尾 *************************************-->
+    <div id="footer"></div>
+
+
+
+    <!-- js *************************************************************************************-->
+    <script src="../lib/jquery-1.11.0.js"></script>
+    <script src="../js/res.js"></script>
+</body>
+
+</html>

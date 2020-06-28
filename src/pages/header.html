@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1897424_9i20ub1bbag.css">
+    <!-- css -->
+    <!-- 公用的 -->
+    <link rel="stylesheet" href="../css/public.css">
+    <!-- header -->
+    <link rel="stylesheet" href="../css/header.css">
+</head>
+
+<body>
+    <!-- html -->
+    <!-- <div class="container1"> -->
+    <div class="header1 container-fluid">
+        <div class="container1 header1-1 clearfix">
+            <p class="cart"><i class="iconfont icongouwuche cart-i"></i></p>
+            <p class="login">你好，未登录</p>
+            <p class="res">免费注册</p>
+        </div>
+    </div>
+    <div class="container1 header2">
+        <div><img src="../images/header1.jpg" alt=""></div>
+        <ul class=" header2-ul">
+            <li>选择购买<i class="iconfont iconxiangxiadejiantou"></i>
+                <ol>
+                    <li>
+                        <a href="./list.html?uid=34552">
+                            洗头洗护</a>
+                        <div>
+                            <div>
+                                <p><a href="./list.html?uid=34552">洗发水</a></p>
+                                <p>护发素</p>
+                                <p>焗油发膜</p>
+                                <p>精油喷雾</p>
+                                <p>造型品</p>
+                                <p>旅行装</p>
+                            </div>
+                            <div>
+                                <p>油性头皮</p>
+                                <p>中性头皮</p>
+                                <p>干性头皮</p>
+                                <p>男士适用</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>身体洗护
+                        <div>
+                            <div>
+                                <p>沐浴液/洗手液</p>
+                                <p>磨砂膏/浴盐</p>
+                                <p>身体乳/霜/膜</p>
+                                <p>浴油/按摩油</p>
+                                <p>护手霜/唇膏</p>
+                                <p>口腔护理</p>
+                                <p>睡眠喷雾</p>
+                            </div>
+                            <div>
+                                <p>身体</p>
+                                <p>手部</p>
+                                <p>足部</p>
+                                <p>唇部</p>
+                                <p>男士</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>面部洗护
+                        <div>
+                            <div>
+                                <p>卸妆/洁面</p>
+                                <p>水/乳</p>
+                                <p>霜</p>
+                                <p>精华</p>
+                                <p>面膜</p>
+                                <p>彩妆</p>
+                            </div>
+                            <div>
+                                <p>敏感修复</p>
+                                <p>抗老紧致</p>
+                                <p>美白提亮</p>
+                                <p>去角质</p>
+                                <p>多效急救</p>
+                                <p>防晒/晒后修复</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>母婴洗护
+                        <div>
+                            <div>
+                                <p>孕产期洗发</p>
+                                <p>婴幼儿洗发</p>
+                                <p>孕产期沐浴</p>
+                                <p>婴幼儿沐浴</p>
+                                <p>孕产期护肤</p>
+                                <p>婴幼儿护肤</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>室内香氛</li>
+                    <li>居家清洁</li>
+                    <li>仪器工具</li>
+                    <li>寝浴用品</li>
+                </ol>
+            </li>
+            <li><a href="./index.html">首页</a></li>
+            <li>精选品牌<i class="iconfont iconxiangxiadejiantou"></i></li>
+            <li>馥境专题</li>
+            <li>关于我们<i class="iconfont iconxiangxiadejiantou"></i>
+                <ol>
+                    <li>品牌主张</li>
+                    <li>创始人故事</li>
+                    <li>联系我们</li>
+                </ol>
+            </li>
+        </ul>
+        <p><input type="text" name="" id=""><i class="iconfont iconfangdajing"></i></p>
+    </div>
+    <!-- </div> -->
+    <!-- js -->
+    <script src="../lib/jquery-1.11.0.js"></script>
+    <script>
+        $(function () {
+
+
+            // 是否登录
+            let username = JSON.parse(localStorage.getItem('login-username'));
+            let id = JSON.parse(localStorage.getItem('login-id'));
+            let pieces = JSON.parse(localStorage.getItem('login-piece'));
+            $('.cart-i').html(pieces);
+            var str = '';
+            if (id != -1) {
+                str = `<p class="cart"><i class="iconfont icongouwuche"></i></p>
+                    <p>你好，${username}</p>
+                    <p>个人中心</p>
+                    <p class="back">退出</p>`;
+                $('.header1-1').html(str);
+
+            } else {
+                str = `
+                    <p class="cart"><i class="iconfont icongouwuche"></i>0</p>
+                    <p class="login">你好，未登录</p>
+                    <p class="res">免费注册</p>
+                    `;
+                $('.header1-1').html(str);
+            }
+            $('.login').click(function () {
+                window.location.href = "./login.html";
+            });
+            $('.res').click(function () {
+                window.location.href = './res.html';
+            });
+            $('.cart').click(function () {
+                window.location.href = './cart.html';
+            });
+            $('.back').click(function () {
+                window.alert('您已经退出登录了');
+                str = `
+                    <p class="cart"><i class="iconfont icongouwuche"></i></p>
+                    <p class="login">你好，未登录</p>
+                    <p class="res">免费注册</p>
+                    `;
+                $('.header1-1').html(str);
+                localStorage.setItem('login-username', -1);
+                localStorage.setItem('login-id', -1);
+            });
+
+
+
+        });
+    </script>
+</body>
+
+</html>
