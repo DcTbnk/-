@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品列表</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/list.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1897424_np953wa8jxh.css">
+</head>
+
+<body>
+    <!-- html -->
+    <!-- header 头************************************** -->
+    <div id="header"></div>
+
+    <!-- content 内容***********************************-->
+    <div class="contents container-fluid">
+        <div class="content container1">
+            <!-- 1 -->
+            <ul class="content-nav">
+                <li>首页<i class="iconfont iconfanhui-copy-copy"></i></li>
+                <li>选择购买<i class="iconfont iconfanhui-copy-copy"></i></li>
+                <li>洗头护发<i class="iconfont iconfanhui-copy-copy"></i></li>
+            </ul>
+            <!-- 2 -->
+            <div class="content-choice">
+                <div class="choice-list">
+                    <p>功能关键词</p>
+                    <ul>
+                        <li>果香调</li>
+                        <li>花香调</li>
+                        <li>西普香调</li>
+                        <li>婴幼儿/敏感肌</li>
+                        <li>舒缓解压</li>
+                        <li>果香调</li>
+                        <li>花香调</li>
+                        <li>西普香调</li>
+                        <li>婴幼儿/敏感肌</li>
+                        <li>舒缓解压</li>
+                        <li>果香调</li>
+                        <li>花香调</li>
+                        <li>西普香调</li>
+                        <li>婴幼儿/敏感肌</li>
+                        <li>舒缓解压</li>
+                    </ul>
+                </div>
+                <div class="choice-select">
+                    <p>排序</p>
+                    <ul class="select-list">
+                        <li class="active">新品</li>
+                        <li>销量<i class="iconfont iconjiantou"></i></li>
+                        <li>价格<i class="iconfont iconjiantou"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="content-message">
+                <!-- 左 -->
+                <div class="message-change">
+                    <p>
+                        <span>猜你喜欢</span>
+                        <span class="change-like">换一换</span>
+                    </p>
+                    <ul class="message-matter">
+                        <!-- li -->
+                        <!-- <li>
+                            <img src="https://qiniu.shjinjia.com.cn/1591855503986.jpg" alt="">
+                            <div>
+                                <p>Philip B</p>
+                                <p>皇家琥珀护发素60ml</p>
+                                <p>
+                                    <span><i class="iconfont iconrenminbi1688"></i>448.00</span>
+                                    <img src="https://aromonde.com/images/add-cart-btn.png" alt="">
+                                </p>
+                            </div>
+                        </li> -->
+
+                    </ul>
+                </div>
+                <!-- 右 -->
+                <div class="information">
+
+                    <ul class="information-ul1 active">
+                        <!-- li -->
+                        <!-- <li>
+                            <div><a href=""><img src="https://qiniu.shjinjia.com.cn/1591855503986.jpg" alt=""></a></div>
+                            <p>Leonor Greyl</p>
+                            <p>年中大促*Leonor Greyl蜂蜜洗发水*2</p>
+                            <div>
+                                <span><i class="iconfont iconrenminbi1688"></i>448.00</span>
+                                <span>67人购买</span>
+                            </div>
+                        </li> -->
+                    </ul>
+                    <ul class="information-ul2"></ul>
+                    <ul class="information-ul3"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer 尾 *************************************-->
+    <div id="footer"></div>
+
+
+
+    <!-- js *************************************************************************************-->
+    <script src="../lib/jquery-1.11.0.js"></script>
+    <script>
+        /* $('.select-list').click(function () {
+            $(this).addClass('active').siblings().removeClass('active').parent().parent().parent().next()
+                .children().find('.information').children().removeClass('active').eq($(this).index()).addClass('active');
+        }); */
+        
+        $(function () {
+            $("#header").load('./header.html');
+            $('#footer').load('./footer.html');
+
+
+            let id = JSON.parse(localStorage.getItem('login-id'));
+
+
+            // 选项卡
+
+
+
+
+            var allNum = '';
+            // 右****************************************
+            let productList2 = '';
+            $.ajax({
+                url: "http://jx.xuzhixiang.top/ap/api/productlist.php",
+                method: "get",
+                data: {
+                    uid: id
+                },
+                dataType: "json",
+                success: function (res) {
+                    console.log(res)
+                    productListArr = res.data
+                    allNum = productListArr.length;
+                    // console.log(allNum);
+                    productListArr.forEach(item => {
+                        productList2 += `<li>
+                            <div><a href="./details.html?pid=${item.pid}"><img src="${item.pimg}" alt=""></a></div>
+                            <p>${item.pname}</p>
+                            <p>${item.pdesc}</p>
+                            <div>
+                                <span><i class="iconfont iconrenminbi1688"></i>${item.pprice}</span>
+                                <span>67人购买</span>
+                            </div>
+                        </li>`;
+                    });
+                    $('.information-ul1').html(productList2);
+
+
+                    // 左左左左左
+                    let productList1 = '';
+                    $.ajax({
+                        url: "//jx.xuzhixiang.top/ap/api/allproductlist.php",
+                        method: "get",
+                        data: {
+                            uid: id,
+                            pagesize: 5,
+                            pagenum: 0
+                        },
+                        dataType: "json",
+                        success: function (res) {
+                            console.log(res)
+                            productListArr = res.data
+
+                            productListArr.forEach(item => {
+                                productList1 += `<li>
+                            <a href="./details.html?pid=${item.pid}">
+                            <img src="${item.pimg}" alt="">
+                            <div>
+                                <p>${item.pname}</p>
+                                <p>${item.pdesc}</p>
+                                <p>
+                                    <span><i class="iconfont iconrenminbi1688"></i>${item.pprice}</span>
+                                    <img src="https://aromonde.com/images/add-cart-btn.png" alt="">
+                                </p>
+                            </div>
+                            </a>
+                        </li>`;
+                            });
+                            $('.message-matter').html(productList1);
+                        }
+                    })
+
+                    // 左******************************************
+                    var pages = Math.ceil(allNum / 5);
+                    // console.log(pages);
+
+
+                    //点击猜你喜欢-换一换
+                    // let newNum2 = '';
+                    $('.change-like').click(function () {
+                        let newNum2 = parseInt(Math.random() * pages + 1);
+                        // console.log(newNum2);
+
+
+                        let productList1 = '';
+                        $.ajax({
+                            url: "//jx.xuzhixiang.top/ap/api/allproductlist.php",
+                            method: "get",
+                            data: {
+                                uid: id,
+                                pagesize: 5,
+                                pagenum: newNum2
+                            },
+                            dataType: "json",
+                            success: function (res) {
+                                // console.log(res)
+                                productListArr = res.data
+
+                                productListArr.forEach(item => {
+                                    productList1 += `<li>
+                            <a href="./details.html?pid=${item.pid}">
+                            <img src="${item.pimg}" alt="">
+                            <div>
+                                <p>${item.pname}</p>
+                                <p>${item.pdesc}</p>
+                                <p>
+                                    <span><i class="iconfont iconrenminbi1688"></i>${item.pprice}</span>
+                                    <img src="https://aromonde.com/images/add-cart-btn.png" alt="">
+                                </p>
+                            </div>
+                            </a>
+                        </li>`;
+                                });
+                                $('.message-matter').html(productList1);
+                            }
+                        })
+
+                    });
+
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

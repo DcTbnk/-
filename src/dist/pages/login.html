@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1897424_v9z7oyh6vp.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <!-- <link rel="stylesheet" href="../sass/login.scss"> -->
+</head>
+<body>
+    <!-- html -->
+    <!-- header 头************************************** -->
+    <div id="header"></div>
+
+    <!-- content 内容-->
+    <div class="contents container-fluid">
+        <div class="content container2">
+            <ul>
+                <li>
+                    <span class="iconfont iconren"></span>
+                    <input type="text" placeholder="手机号/邮箱" name="username">
+                </li>
+                <li>
+                    <span class="iconfont iconsuo"></span>
+                    <input type="text" placeholder="密码" name="password">
+                </li>
+            </ul>
+            <button>立即登录</button>
+            <p>
+                <span>还没有账号？请 <a href="JavaScript:;">注册</a></span>
+                <span><a>忘记密码？</a></span>
+            </p>
+            <div>
+                <p></p>
+                <span>使用社交账号登录</span>
+                <p></p>
+            </div>
+            <ol>
+                <li><i class="iconfont iconweibo"></i></li>
+                <li><i class="iconfont iconkoukou"></i></li>
+                <li><i class="iconfont iconweixin"></i></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- footer 尾 *************************************-->
+    <div id="footer"></div>
+
+
+
+
+    <!-- js **************************************************************************************-->
+    <script src="../lib/jquery-1.11.0.js"></script>
+    <script>
+        $(function () {
+            $("#header").load('./header.html');
+            $('#footer').load('./footer.html');
+
+            //登录
+            $('button').click(function(e){
+            e.preventDefault();
+
+            let username=$('[name="username"]').val();
+            let userpwd=$('[name="password"]').val();
+
+            $.ajax({
+                url:'http://jx.xuzhixiang.top/ap/api/login.php',
+                type:'get',
+                data:{username:username,password:userpwd},
+                dataType:'json',
+                // xhrFields: {
+                //     withCredentials: true
+                // },
+                success:function(res){
+                    if(res.code=='1'){
+                        window.alert('登陆成功');
+                        
+                        // localStorage.setItem('login', 1);
+                        // let index= 2 //window.location.search.substring(window.location.search.indexOf('=')+1);
+                        window.location.href='./index.html';
+                        localStorage.setItem('login-id', res.data.id);
+                        localStorage.setItem('login-username', res.data.username);
+                        // console.log(localStorage.getItem('login'));
+                    }else if(res.code=='1'){
+                        window.alert('您登录失败，请重新登陆');
+                    }
+                }
+            });
+        });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1897424_ot3kfya5a0f.css">
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+
+<body>
+    <!-- html -->
+    <!-- header 头************************************** -->
+    <div id="header"></div>
+
+    <!-- content 内容-->
+    <div class="content container1">
+        <!-- cart-title -->
+        <div class="cart-title"><i class="iconfont icongouwuche"></i><span>购物车</span><span>(共 n件)</span></div>
+        <!--  -->
+        <div class="cart-shop">
+            <table>
+                <thead>
+                    <tr class="tr1">
+                        <td><input type="checkbox" id="selectAll"></td>
+                        <td>商品</td>
+                        <td>单价</td>
+                        <td>数量</td>
+                        <td>小计</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td class="td1"><input type="checkbox"></input></td>
+                        <td class="td2">
+                            <img src="https://qiniu.shjinjia.com.cn/1581578031457.jpg" alt="">
+                            <div>
+                                <p>Dermalogica</p>
+                                <p>德美乐嘉 多维面膜 75ml</p>
+                                <p>编号: DMLG016</p>
+                            </div>
+                        </td>
+                        <td class="td3"><i class="iconfont iconrenminbi1688"></i>350.00</td>
+                        <td class="td4">
+                            <p>
+                                <span>-</span>
+                                <input type="number" value="1">
+                                <span>+</span>
+                            </p>
+                        </td>
+                        <td class="td5"><i class="iconfont iconrenminbi1688"></i>350.00</td>
+                        <td class="td6"><span>X</span></td>
+                    </tr> -->
+                    <!-- ****************************** -->
+                    <!-- <tr index="${item.pid}">
+                        <td class="td1"><input type="checkbox" name="pitch-on" class="ck"></input></td>
+                        <td class="td2">
+                            <img src="${item.pimg}" alt="">
+                            <div>
+                                <p>${item.pname}</p>
+                                <p>${item.pprice}</p>
+                                <p>编号: DMLG016</p>
+                            </div>
+                        </td>
+                        <td class="td3 price"><i class="iconfont iconrenminbi1688"></i>${item.pprice}</td>
+                        <td class="td4">
+                            <p>
+                                <span class="minus">-</span>
+                                <input type="number" value="${item.pnum}" class="totalNum">
+                                <span class="add">+</span>
+                            </p>
+                        </td>
+                        <td class="td5" class="totalPrice"><i class="iconfont iconrenminbi1688"></i>${onePay}</td>
+                        <td class="td6"><span class="goods-del" onclick="decCart(this)">X</span></td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+        <!-- cart-summary -->
+        <div class="cart-summary">
+            <span>已选n件，共优惠0.00</span>
+            <span>合计金额<i class="iconfont iconrenminbi1688" id="finalPrice">0</i></span>
+            <span>确认结算</span>
+        </div>
+
+        <!-- cart-like -->
+        <div class="cart-like">
+            <p>猜你喜欢</p>
+            <ul class="like-ul">
+                <li>
+                    <img src="https://qiniu.shjinjia.com.cn/1558692384186.jpg" alt="">
+                    <p>Omorovicza</p>
+                    <p>湖泊矿物泥洗面奶150ml</p>
+                    <p><span><i class="iconfont iconrenminbi1688"></i>468.00</span><span>20人购买</span></p>
+                </li>
+                <li>
+                    <img src="https://qiniu.shjinjia.com.cn/1558692384186.jpg" alt="">
+                    <p>Omorovicza</p>
+                    <p>湖泊矿物泥洗面奶150ml</p>
+                    <p><span><i class="iconfont iconrenminbi1688"></i>468.00</span><span>20人购买</span></p>
+                </li>
+                <li>
+                    <img src="https://qiniu.shjinjia.com.cn/1558692384186.jpg" alt="">
+                    <p>Omorovicza</p>
+                    <p>湖泊矿物泥洗面奶150ml</p>
+                    <p><span><i class="iconfont iconrenminbi1688"></i>468.00</span><span>20人购买</span></p>
+                </li>
+                <li>
+                    <img src="https://qiniu.shjinjia.com.cn/1558692384186.jpg" alt="">
+                    <p>Omorovicza</p>
+                    <p>湖泊矿物泥洗面奶150ml</p>
+                    <p><span><i class="iconfont iconrenminbi1688"></i>468.00</span><span>20人购买</span></p>
+                </li>
+                <li>
+                    <img src="https://qiniu.shjinjia.com.cn/1558692384186.jpg" alt="">
+                    <p>Omorovicza</p>
+                    <p>湖泊矿物泥洗面奶150ml</p>
+                    <p><span><i class="iconfont iconrenminbi1688"></i>468.00</span><span>20人购买</span></p>
+                </li>
+                <li>
+                    <img src="https://qiniu.shjinjia.com.cn/1558692384186.jpg" alt="">
+                    <p>Omorovicza</p>
+                    <p>湖泊矿物泥洗面奶150ml</p>
+                    <p><span><i class="iconfont iconrenminbi1688"></i>468.00</span><span>20人购买</span></p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- footer 尾 *************************************-->
+    <div id="footer"></div>
+
+
+
+
+    <!-- js **************************************************************************************-->
+    <script src="../lib/jquery-1.11.0.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+        $(function () {
+            $("#header").load('./header.html');
+            $('#footer').load('./footer.html');
+        });
+    </script>
+</body>
+
+</html>

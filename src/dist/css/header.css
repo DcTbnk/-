@@ -1,0 +1,110 @@
+.header1{background: #ececec;width:100%;}
+
+.header1-1 {
+    height: 45px;
+    /* width: 100%; */
+    line-height: 45px;
+    /* background: #ececec; */
+    padding-right: 6px;
+    display: flex;
+    justify-content: flex-end;
+    color: #775566;
+}
+
+.header1-1 p {
+    padding: 0 12px;
+    margin: 12px 0;
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+    border-right: 1px solid #775566;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.header1-1 p i {
+    margin-right: 7px;
+    font-weight: 900;
+}
+
+.header1-1 p:last-child {
+    border: none;
+}
+
+.header2 {
+    display: flex;
+    height: 130px;
+    justify-content: space-between;
+    background: white;
+    width:100%;
+}
+
+.header2>div {
+    margin: 18px 5px 0 0;
+}
+
+.header2 ul {
+    width:auto;
+    display: flex;
+    margin-right: 5px;
+    margin-top: 76px;
+    /* height:24px; */
+}
+
+.header2 ul>li {
+    color: #775566;
+    margin-right: 40px;
+    /* height:24px; */
+    position: relative;
+    width:auto;
+    /* height: auto; */
+}
+
+.header2 ul>li:hover{border-bottom: 1px solid #775566;height: 24px;/* position: absolute;bottom:0px; */}
+
+.header2 ul li i {
+    margin-left: 10px;
+    font-size: 6px;
+}
+
+.header2>p {
+    display: flex;
+    width: 206px;
+    height: 34px;
+    border: 1px solid #775566;
+    margin-top: 70px;
+    cursor: pointer;
+}
+
+.header2 p input {
+    width: 170px;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.header2 p i {
+    display: block;
+    background: #775566;
+    width: 36px;
+    height: 100%;
+    color: white;
+    font-size: 25px;
+    line-height: 34px;
+    text-align: center;
+}
+
+.header2-ul{}
+.header2-ul li{}
+.header2-ul li a{color: #775566;}
+.header2-ul li>ol{background: rgba(118, 84, 108,.5);color: white;position:absolute;left:0;top:25px;margin-top: 11px;display: none;width: 108px;z-index:9;}
+.header2 ul li:hover ol{display: block;}
+.header2-ul li ol li{height:46px;line-height: 46px;text-align:center;color: white;position: relative;}
+.header2-ul li ol li a{height:46px;line-height: 46px;text-align:center;color: white;width:100%;}
+.header2-ul li ol li:hover{background:rgba(118, 84, 108,.7);}
+.header2-ul li ol li>div{position:absolute;left:108px;top:6px;display:flex;line-height:35px;width:230px;height:auto;color:rgb(63, 62, 62);text-align: center;flex-wrap: wrap;display: none;font-size:15px;}
+.header2-ul li ol li:hover>div{display:flex;}
+.header2-ul li ol li div div{width:115px;background:white;}
+.header2-ul li ol li div div p a{color:rgb(63, 62, 62);margin:0;line-height:35px;}
+.header2-ul li ol li div div p:hover{color:rgb(138, 76, 138);}

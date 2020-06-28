@@ -1,0 +1,16 @@
+/* reset */
+*{margin:0;padding:0;}
+ul,ol,li{list-style:none;}
+a{text-decoration:none;}
+img{border:none;display:block;}
+body{font-family:Arial,微软雅黑;color:#333333;}
+li{cursor: pointer;}
+/* common */
+.l{float:left;}
+.r{float:right;}
+.clearfix:after{content:"";clear:both;display:block;}
+.container1{width:980px;margin:0 auto;position:relative;}
+.container2{overflow: hidden;width:923px;margin:0 auto;position:relative;}
+.container-fluid{position:relative;/* background:white; */}
+
+/*  */

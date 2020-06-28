@@ -1,0 +1,104 @@
+/* content 内容 */
+.content{}
+
+/* cart-title */
+.content .cart-title{margin-top:27px;margin-bottom:20px;}
+.content .cart-title i{margin-right:7px;font-size:20px;}
+.content .cart-title span{}
+.content .cart-title span:nth-of-type(1){margin-right:15px;font-size:20px;color:#6a546b;}
+.content .cart-title span:nth-of-type(2){font-size:14px;color:#b3b0ab;}
+
+
+/* cart-shop */
+.content .cart-shop{}
+.content .cart-shop table{border-collapse: collapse;}
+.content .cart-shop table tr{height:134px;border-bottom:1px solid #fafafa;}
+.content .cart-shop table .tr1{height:45px;background:#fafafa;}
+.content .cart-shop table tr:nth-of-type(1){height:45px;/* background:#fafafa; */}
+.content .cart-shop table tr td{text-align:center;}
+.content .cart-shop table tr:nth-of-type(1){font-size:14px;}
+.content .cart-shop table tr:nth-of-type(1) td:nth-of-type(2){float: left;line-height:45px;margin-left:45px;}
+
+.content .cart-shop table tr .td1{width:29px;}
+.content .cart-shop table tr .td1 input{width:18px;height:18px;background:#734c69;border:none;outline:none;border-radius:50%;}
+
+.content .cart-shop table tr .td2{margin:24px 20px;display:flex;width:419px;}
+.content .cart-shop table tr .td2 img{width:85px;height:85px;margin-right:15px;}
+.content .cart-shop table tr .td2 div{display:flex;justify-content:flex-start;flex-direction:column;text-align: left;}
+.content .cart-shop table tr .td2 div p{font-size:16px;line-height:18px;margin-bottom:6px;color:#010100;font-weight:500;}
+.content .cart-shop table tr .td2 div p:nth-of-type(1){margin-top:10px;}
+.content .cart-shop table tr .td2 div p:nth-of-type(2){}
+.content .cart-shop table tr .td2 div p:nth-of-type(3){margin-top:2px;color:#bcb0b4;font-size:12px;}
+
+.content .cart-shop table tr .td3{width:89px;text-align: center;font-size:15px;color:black;}
+.content .cart-shop table tr .td3 i{}
+
+.content .cart-shop table tr .td4{width:249px;text-align: center;}
+.content .cart-shop table tr .td4 p{border:1px solid #dcdcdc;display:flex;justify-content:center;width:79px;text-align: center;margin:0;margin-left:84px;}
+.content .cart-shop table tr .td4 p span{width:21px;height:21px;background:#ebebeb;cursor: pointer;}
+.content .cart-shop table tr .td4 p span:nth-of-type(1){}
+.content .cart-shop table tr .td4 p span:nth-of-type(2){}
+.content .cart-shop table tr .td4 p input{border:none;outline:none;width:38px;text-align:center;font-size:15px;font-weight:600;}
+
+.content .cart-shop table tr .td5{width:95px;text-align: center;color:#9a5574;font-size:15px;font-weight:700;}
+.content .cart-shop table tr .td5 i{}
+
+.content .cart-shop table tr .td6{width:99px;}
+.content .cart-shop table tr .td6 span{cursor: pointer;width:21px;height:21px;background:#f4e7f1;display: inline-block;text-align:center;line-height:21px;font-weight:700;}
+
+
+
+
+/* cart-summary */
+.cart-summary{height:65px;background:#fafafa;line-height:65px;margin-bottom:22px;display:flex;justify-content:flex-end;}
+.cart-summary span{}
+.cart-summary span:nth-of-type(1){margin-right:25px;font-size:14px;line-height:65px;}
+.cart-summary span:nth-of-type(2){margin-right:33px;font-size:12px;}
+.cart-summary span:nth-of-type(2) i{color:#76546c;font-weight:700;margin-left:12px;font-size:20px;}
+.cart-summary span:nth-of-type(3){width:204px;background:#76546c;color:white;text-align: center;font-size:20px;}
+
+
+/* cart-like */
+.cart-like{margin-bottom:222px;}
+.cart-like>p{font-size:16px;color:#75507b;height:45px;border-bottom:2px solid #f5f5f5;margin-bottom:21px;}
+.cart-like ul{display:flex;}
+.cart-like ul li{flex:1;padding:0 4px;overflow: hidden;}
+.cart-like ul li img{width:100%;height:200px;}
+.cart-like ul li p{font-size:14px;line-height:24px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.cart-like ul li p:nth-of-type(1){}
+.cart-like ul li p:nth-of-type(2){}
+.cart-like ul li p:nth-of-type(3){display:flex;justify-content:space-between;}
+.cart-like ul li p:nth-of-type(3) span{color:#795768;}
+.cart-like ul li p:nth-of-type(3) span:nth-of-type(1){font-size:16px;font-weight:900;}
+.cart-like ul li p:nth-of-type(3) span:nth-of-type(1) i{font-size:12px;font-weight:900;}
+.cart-like ul li p:nth-of-type(3) span:nth-of-type(2){font-size:12px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

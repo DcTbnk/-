@@ -1,0 +1,67 @@
+
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            /* background: #eee; */
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-container img{width:100px;height:100px;}
+        .swiper-wrapper {
+            display: flex;
+            flex-direction: column;
+            /* height:388px; */
+            position: absolute;
+        }
+
+        .swiper-wrapper .swiper-slide {
+            margin:0;
+            width: 95px;
+            height: 95px;
+            margin-bottom: 25px;
+            border: 1px solid #cecece;
+        }
+
+        .swiper-wrapper .swiper-slide img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-button-next{position: absolute;left:50%;bottom:0;transform: translateX(-50%);}
+        .swiper-button-next i{width:100%;height:100%;background: white;/* border: 1px solid red; */position: relative;}
+        .swiper-button-next i::after{content: '';width: 50px;height:50px;display: block;background: white;position: absolute;top:0;left:25px;}
