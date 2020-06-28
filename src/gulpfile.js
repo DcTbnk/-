@@ -7,7 +7,7 @@ const rename = require("gulp-rename");
 const babel = require("gulp-babel");
 // 复制图片
 gulp.task("copyImg",function(done){
-    gulp.src("images/*.{jpg,png}").pipe(gulp.dest("dist/images"));
+    gulp.src("./images/*.{jpg,png}").pipe(gulp.dest("dist/images"));
     done();
 });
 
@@ -29,6 +29,8 @@ gulp.task("copyHtml",function(done){
     gulp.src("js/*.js").pipe(gulp.dest("dist/js")).pipe(connect.reload());
     gulp.src("css/*.css").pipe(gulp.dest("dist/css")).pipe(connect.reload());
     gulp.src("lib/*.js").pipe(gulp.dest("dist/lib")).pipe(connect.reload());
+    gulp.src("images/*.*").pipe(gulp.dest("dist/images")).pipe(connect.reload());
+    
     done();
 });
 //  侦测文件变化  关键字 watch("监听的文件",执行对应的任务)

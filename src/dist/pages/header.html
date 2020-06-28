@@ -147,15 +147,7 @@
                     `;
                 $('.header1-1').html(str);
             }
-            $('.login').click(function () {
-                window.location.href = "./login.html";
-            });
-            $('.res').click(function () {
-                window.location.href = './res.html';
-            });
-            $('.cart').click(function () {
-                window.location.href = './cart.html';
-            });
+            
             $('.back').click(function () {
                 window.alert('您已经退出登录了');
                 str = `
@@ -168,6 +160,15 @@
                 localStorage.setItem('login-id', -1);
             });
 
+            $('.login').click(function () {
+                window.location.href = "./login.html";
+            });
+            $('.res').click(function () {
+                window.location.href = './res.html';
+            });
+            $('.cart').click(function () {
+                window.location.href = './cart.html';
+            });
 
 
         });

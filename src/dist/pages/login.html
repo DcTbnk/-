@@ -14,7 +14,6 @@
     <!-- html -->
     <!-- header 头************************************** -->
     <div id="header"></div>
-
     <!-- content 内容-->
     <div class="contents container-fluid">
         <div class="content container2">
@@ -25,7 +24,7 @@
                 </li>
                 <li>
                     <span class="iconfont iconsuo"></span>
-                    <input type="text" placeholder="密码" name="password">
+                    <input type="password" placeholder="密码" name="password">
                 </li>
             </ul>
             <button>立即登录</button>
@@ -84,7 +83,7 @@
                         localStorage.setItem('login-id', res.data.id);
                         localStorage.setItem('login-username', res.data.username);
                         // console.log(localStorage.getItem('login'));
-                    }else if(res.code=='1'){
+                    }else{
                         window.alert('您登录失败，请重新登陆');
                     }
                 }
